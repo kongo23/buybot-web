@@ -5,6 +5,8 @@
 
 # User-specific files
 launchSettings.json
+appsettings.json
+
 *.rsuser
 *.suo
 *.user
