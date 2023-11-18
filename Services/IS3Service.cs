@@ -2,6 +2,6 @@
 {
     public interface IS3Service
     {
-        Task<Stream> DownloadFileAsync(string bucketName, string key);
+        string GetDownloadFileUrl(string bucketName, string key);
     }
 }

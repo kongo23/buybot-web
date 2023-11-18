@@ -5,14 +5,26 @@ namespace buybot_web.Services
     public class S3Service : IS3Service
     {
         private IAmazonS3 _s3Client;
+
         public S3Service(IAmazonS3 s3Client) {
             _s3Client = s3Client;
         }
 
-        public async Task<Stream> DownloadFileAsync(string bucketName, string key)
+        public string GetDownloadFileUrl(string bucketName, string key)
         {
-            var response = await _s3Client.GetObjectAsync(bucketName, key);
-            return response.ResponseStream;
+            DateTime expiration = DateTime.UtcNow.AddHours(1);
+
+            return _s3Client.GeneratePreSignedURL(bucketName, key, expiration, new Dictionary<string,object>());
+
+            //using (var objResponse = await _s3Client.GetObjectAsync(bucketName, key))
+            //{
+            //    using (var memoryStream = new MemoryStream())
+            //    {
+            //        await objResponse.ResponseStream.CopyToAsync(memoryStream);
+            //        memoryStream.Position = 0;
+            //        return memoryStream;
+            //    }   
+            //}
         }
     }
 }

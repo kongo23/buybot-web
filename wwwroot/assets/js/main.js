@@ -102,9 +102,13 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    console.log("DOWNLOAD");
+                    if (data.url) {
+                        window.open(data.url, '_blank');
+                    } else {
+                        alert('Failed to retrieve download URL.');
+                    }
                 } else {
-                    alert('reCAPTCHA verification failed. Please try again.');
+                    alert('Verification failed. Please try again.');
                 }
             });
     };
@@ -117,6 +121,8 @@
             theme: 'light',
             callback: validate
         });
+
+        validate("id");
 
         recaptchaContainer.style.display = 'block';
     });

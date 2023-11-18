@@ -13,7 +13,8 @@ namespace buybot_web.Controllers
 
         public DownloadController(
             IConfiguration configs,
-            IS3Service s3Service) {
+            IS3Service s3Service)
+        {
             _configs = configs;
             _s3Service = s3Service;
         }
@@ -28,11 +29,9 @@ namespace buybot_web.Controllers
 
             if (isRecaptchaValid)
             {
-                var fileStream = await _s3Service.DownloadFileAsync("moonbot-bucket", "app");
+                var url = _s3Service.GetDownloadFileUrl("moonbot-bucket", "moonbot-free.zip");
 
-                var contentType = "application/octet-stream";
-
-                return File(fileStream, contentType, "MoonBot");
+                return Ok(new { success = true, url });
             }
             else
             {
