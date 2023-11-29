@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
-using buybot_web.Services;
 
-namespace buybot_web.Controllers
+namespace buybot_web.Services
 {
     [ApiController]
     [Route("[controller]")]
@@ -35,7 +34,7 @@ namespace buybot_web.Controllers
             }
             else
             {
-                return BadRequest(new { success = false, message = "reCAPTCHA verification failed." });
+                return BadRequest(new { success = false });
             }
         }
 

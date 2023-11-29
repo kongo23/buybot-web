@@ -105,12 +105,11 @@
                     if (data.url) {
                         window.open(data.url, '_blank');
                     } else {
-                        alert('Failed to retrieve download URL.');
+                        alert('Failed to retrieve URL for download.');
                     }
-                } else {
-                    alert('Verification failed. Please try again.');
                 }
-            });
+            })
+            .catch(error => console.error('Error:', error));;
     };
 
     document.getElementById('download-btn').addEventListener('click', function () {

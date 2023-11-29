@@ -15,16 +15,6 @@ namespace buybot_web.Services
             DateTime expiration = DateTime.UtcNow.AddHours(1);
 
             return _s3Client.GeneratePreSignedURL(bucketName, key, expiration, new Dictionary<string,object>());
-
-            //using (var objResponse = await _s3Client.GetObjectAsync(bucketName, key))
-            //{
-            //    using (var memoryStream = new MemoryStream())
-            //    {
-            //        await objResponse.ResponseStream.CopyToAsync(memoryStream);
-            //        memoryStream.Position = 0;
-            //        return memoryStream;
-            //    }   
-            //}
         }
     }
 }
