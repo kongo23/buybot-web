@@ -12,7 +12,7 @@ namespace buybot_web.Services
 
         public string GetDownloadFileUrl(string bucketName, string key)
         {
-            DateTime expiration = DateTime.UtcNow.AddHours(1);
+            DateTime expiration = DateTime.UtcNow.AddMinutes(2);
 
             return _s3Client.GeneratePreSignedURL(bucketName, key, expiration, new Dictionary<string,object>());
         }

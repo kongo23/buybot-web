@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using buybot_web.Services;
+using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 
-namespace buybot_web.Services
+namespace buybot_web.Controllers
 {
     [ApiController]
     [Route("[controller]")]

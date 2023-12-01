@@ -109,11 +109,16 @@
                     }
                 }
             })
-            .catch(error => console.error('Error:', error));;
+            .catch(error => console.error('Error:', error))
+            .finally(() => {
+                document.getElementById('recaptcha-container').style.display = 'none';
+                grecaptcha.reset();
+            })
     };
 
     document.getElementById('download-btn').addEventListener('click', function () {
         var recaptchaContainer = document.getElementById('recaptcha-container');
+        recaptchaContainer.style.display = 'block';
 
         grecaptcha.render(recaptchaContainer, {
             sitekey: '6LfTVd0oAAAAAGWSpSQF5uCKbhuzHQ67bZIdI9ob',
@@ -121,9 +126,6 @@
             callback: validate
         });
 
-        validate("id");
-
-        recaptchaContainer.style.display = 'block';
     });
 
   // WOW active
