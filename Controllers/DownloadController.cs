@@ -29,7 +29,7 @@ namespace buybot_web.Controllers
 
             if (isRecaptchaValid)
             {
-                var url = _s3Service.GetDownloadFileUrl("moonbot-bucket", "moonbot-free.zip");
+                var url = _s3Service.GetDownloadFileUrl("moonbot-free.zip");
 
                 return Ok(new { success = true, url });
             }

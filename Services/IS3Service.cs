@@ -2,6 +2,6 @@
 {
     public interface IS3Service
     {
-        string GetDownloadFileUrl(string bucketName, string key);
+        string GetDownloadFileUrl(string key);
     }
 }
