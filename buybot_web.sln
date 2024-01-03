@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "buybot-web", "buybot-web.csproj", "{C09E3DB1-40B0-4103-9659-BAF769568CA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "buybot_web", "buybot_web.csproj", "{C09E3DB1-40B0-4103-9659-BAF769568CA6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "buybot_lambdas", "..\buybot_lambdas\buybot_lambdas.csproj", "{5F1B500A-25B2-46CC-945B-3AF31861F85B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C09E3DB1-40B0-4103-9659-BAF769568CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C09E3DB1-40B0-4103-9659-BAF769568CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C09E3DB1-40B0-4103-9659-BAF769568CA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1B500A-25B2-46CC-945B-3AF31861F85B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1B500A-25B2-46CC-945B-3AF31861F85B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1B500A-25B2-46CC-945B-3AF31861F85B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1B500A-25B2-46CC-945B-3AF31861F85B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
