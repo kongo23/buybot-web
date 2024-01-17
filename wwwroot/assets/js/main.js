@@ -93,20 +93,23 @@
   });
 
     var validate = function (token) {
-        fetch('/download?id=' + token, {
+        fetch('https://api.moonbotapp.com/download?id=' + token, { //24rteh0ei6.execute-api.eu-central-1.amazonaws.com
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             }
         })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    if (data.url) {
-                        window.open(data.url, '_blank');
-                    } else {
-                        alert('Failed to retrieve URL for download.');
-                    }
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(url => {
+                if (url) {
+                    window.open(url, '_blank');
+                } else {
+                    alert('URL was not provided in the response.');
                 }
             })
             .catch(error => console.error('Error:', error))

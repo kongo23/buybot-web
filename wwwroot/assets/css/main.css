@@ -11,9 +11,11 @@
           align-items: center;
 }
 
-.app-img{
-  border-radius:50px;
-  max-width:500px;
+.app-img {
+    border-radius: 15px;
+    max-width: 500px;
+    height: auto;
+    width: 100%;
 }
 
 
@@ -785,10 +787,11 @@ p {
 .hero-section {
   position: relative;
   z-index: 1;
-  padding: 160px 0 180px 0;
+  padding: 160px 0 50px 0;
   background-image: url("../img/hero/hero-bg.svg");
   background-position: top center;
   background-repeat: no-repeat;
+  background-size: 130em;
 }
 
 @media (max-width: 767px) {
@@ -1094,7 +1097,7 @@ p {
 
 @media (max-width: 767px) {
   .about-section.pt-150 {
-    padding-top: 100px;
+    padding-top: 30px;
   }
 }
 
@@ -1105,9 +1108,10 @@ p {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
-  .about-section .about-img {
-    margin-bottom: 70px;
-  }
+    .about-section .about-img {
+        margin-bottom: 20px;
+        padding: 0 0 25px 0;
+    }
 }
 
 .about-section .about-img .shape {
@@ -1120,6 +1124,7 @@ p {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   left: -70px;
+  width: 40em;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -1164,9 +1169,10 @@ p {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
-  .about-section .about-img-2 {
-    margin-bottom: 70px;
-  }
+    .about-section .about-img-2 {
+        margin-bottom: 50px;
+        padding: 0;
+    }
 }
 
 .about-section .about-img-2 .shape {
@@ -1179,6 +1185,7 @@ p {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   right: -70px;
+  width: 40em;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -1189,7 +1196,8 @@ p {
 
 @media (max-width: 767px) {
   .about-section .about-img-2 .shape.shape-1 {
-    width: 70%;
+    /*width: 70%;*/
+    display:none;
   }
 }
 
@@ -1369,6 +1377,9 @@ p {
     color: #5864FF;
     padding: 17.5px 35px;
   }
+  .purchase-button{
+    margin-top: 10px;
+  }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
@@ -1397,10 +1408,11 @@ p {
 }
 
 @media (max-width: 767px) {
-  .footer {
-    padding-top: 120px;
-    background: #5864FF;
-  }
+    .footer {
+        padding-top: 120px;
+        background: #5864FF;
+        margin-top: 30px;
+    }
 }
 
 .footer .widget-wrapper .footer-widget {
