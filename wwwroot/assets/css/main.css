@@ -787,7 +787,7 @@ p {
 .hero-section {
   position: relative;
   z-index: 1;
-  padding: 160px 0 50px 0;
+  padding: 160px 0 160px 0;
   background-image: url("../img/hero/hero-bg.svg");
   background-position: top center;
   background-repeat: no-repeat;
@@ -937,7 +937,7 @@ p {
 /* ====== feature css ====== */
 @media (max-width: 767px) {
   .feature-section.pt-120 {
-    padding-top: 80px;
+    padding-top: 0px;
   }
 }
 
@@ -1428,7 +1428,7 @@ p {
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   .footer .widget-wrapper .footer-widget .desc {
-    padding-right: 50px;
+    padding-right: 5px;
   }
 }
 
@@ -1934,7 +1934,7 @@ display: inline-block;
 }
 
 .pt-120 {
-  padding-top: 120px;
+  padding-top: 0px;
 }
 
 .pt-125 {
