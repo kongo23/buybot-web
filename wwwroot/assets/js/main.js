@@ -2,7 +2,7 @@
   //===== Prealoder
 
   window.onload = function () {
-    window.setTimeout(fadeout, 500);
+      window.setTimeout(fadeout, 500);
   };
 
   function fadeout() {
@@ -93,7 +93,7 @@
   });
 
     var validate = function (token) {
-        fetch('https://api.moonbotapp.com/download?id=' + token, { //24rteh0ei6.execute-api.eu-central-1.amazonaws.com
+        fetch('https://api.moonbotapp.com/download?id=' + token, { 
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -116,10 +116,24 @@
             .finally(() => {
                 document.getElementById('recaptcha-container').style.display = 'none';
                 grecaptcha.reset();
+
+                var loadingButton = document.getElementById('button__loader');
+                var downloadButton = document.getElementById('download-btn');
+                loadingButton.classList.add('button__loader--hide');
+                downloadButton.classList.remove('button--loading');
+                downloadButton.disabled = false;
+                downloadButton.querySelector('span').innerHTML = 'Download free version';
             })
     };
 
     document.getElementById('download-btn').addEventListener('click', function () {
+        var loadingButton = document.getElementById('button__loader');
+        var downloadButton = document.getElementById('download-btn');
+        loadingButton.classList.remove('button__loader--hide');
+        downloadButton.classList.add('button--loading');
+        downloadButton.disabled = true;
+        downloadButton.querySelector('span').innerHTML = 'Loading...';
+
         var recaptchaContainer = document.getElementById('recaptcha-container');
         recaptchaContainer.style.display = 'block';
 
@@ -130,6 +144,7 @@
         });
 
     });
+
 
   // WOW active
   new WOW().init();

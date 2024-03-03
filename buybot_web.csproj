@@ -24,10 +24,4 @@
     </Content>
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="private_key.pem">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>
