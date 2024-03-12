@@ -6,11 +6,13 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>MoonBot - Multiplatform snipe bot</title>
     <meta property="og:title" content="MoonBot - Multiplatform snipe bot">
-    <meta property="og:description" content="Moonbot helps you buy tokens as soon as they become available, getting you the best price possible!">
-    <meta property="og:image" content="assets/img/favicon.png">
+    <meta property="og:description" content="Moonbot helps you snipe tokens as soon as they become available, getting you the best price possible!">
+    <meta property="og:image" content="https://moonbotapp.com/assets/img/hero/app-main-og.png">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://moonbotapp.com/" />
     <meta name="description" content="Moonbot helps you buy tokens as soon as they become available, getting you the best price possible!" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/32x32.png" />
     <!-- Place favicon.ico in the root directory -->
     <!-- ======== CSS here ======== -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
@@ -18,15 +20,6 @@
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-964092961"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'AW-964092961');
-    </script>
 </head>
 
 <body>
@@ -121,8 +114,8 @@
                                 <div id="button__loader" class="loader button__loader button__loader--hide"></div>
                                 <span>Download free version</span>
                             </button>
-                            <a href="https://nowpayments.io/payment/?iid=5604401528" target="_blank"
-                               class="main-btn border-btn btn-hover wow fadeInUp purchase-button" data-wow-delay=".6s">Purchase Now</a>
+                            <a href="/purchase.html" target="_blank"
+                               class="main-btn border-btn btn-hover wow fadeInUp purchase-button" data-wow-delay=".6s">Purchase Now <br/><span id="current_discount">with 50% discount</span></a>
                             <br />
                             <div id="recaptcha-container" style="display: none;"></div>
                         </div>
@@ -152,7 +145,7 @@
                         <div class="content">
                             <h3>Lightning Speed</h3>
                             <p>
-                                Stay ahead of other bots by using our lightning-fast nodes to seamlessly execute your purchases.
+                                Stay ahead of other bots by using our provided lightning-fast RPC nodes to seamlessly execute your purchases.
                             </p>
                         </div>
                     </div>
@@ -178,7 +171,7 @@
                         <div class="content">
                             <h3>Easy to Use</h3>
                             <p>
-                                Simple and intuitive design that ensures a smooth experience.
+                                Simple and intuitive design that ensures a smooth experience. Anti-AntiBot strategy included.
                             </p>
                         </div>
                     </div>
@@ -238,13 +231,13 @@
                     <div class="about-content">
                         <div class="section-title mb-30">
                             <h2 class="mb-25 wow fadeInUp" data-wow-delay=".2s">
-                                Early Access
+                                Early Access!
                             </h2>
                         </div>
                         <ul>
                             <li>Grab this tool now at the lowest price, and get free updates with support for new chains and other features.</li>
                             <li>By getting premium version of the tool, you also gain the ability to vote for feature requests</li>
-                            <li>Premium price will rise with each feature update</li>
+                            <li>Discount will decrease with each feature update!</li>
                         </ul>
                         <a href="#home" class="main-btn btn-hover border-btn wow fadeInUp" data-wow-delay=".6s">
                             Try it yourself
@@ -298,7 +291,7 @@
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        window.addEventListener('load', function () {
+        window.addEventListener('DOMContentLoaded', function () {
             // When the page is fully loaded, replace the placeholder with the GIF
             var gifPlaceholder = document.getElementById('gif-placeholder');
             var gif = document.createElement('img');

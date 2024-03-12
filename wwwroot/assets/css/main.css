@@ -253,7 +253,13 @@ p {
 }
 .purchase-button {
     margin-top: 10px;
+    padding: 0.3rem 3rem;
 }
+.purchase-button span{
+    color:gold;
+    font-size:15px;
+}
+
 #download-btn {
     margin-top: 10px;
 }
@@ -1041,7 +1047,7 @@ p {
     height: 130px;
     border-radius: 50%;
     background: rgba(88, 100, 255, 0.1);
-    color: #5864FF;
+    color: #8a44e7;
     margin: auto;
     margin-bottom: 30px;
     font-size: 65px;
