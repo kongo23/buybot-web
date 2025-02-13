@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<title>MoonBot - Multiplatform snipe bot</title>
+	<meta property="og:title" content="MoonBot - Multiplatform snipe bot">
+	<meta property="og:description" content="Moonbot helps you snipe tokens as soon as they become available, getting you the best price possible!">
+	<meta property="og:image" content="https://moonbotapp.com/assets/img/hero/app-main-og.png">
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://moonbotapp.com/" />
+	<meta name="description" content="Moonbot helps you buy tokens as soon as they become available, getting you the best price possible!" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/32x32.png" />
+	<!-- ======== CSS here ======== -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/css/lineicons.css" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/emailForm.css" />
+</head>
+
+<body>
+	<!-- ======== header end ======== -->
+	<!-- ======== hero-section start ======== -->
+	<header class="header-email">
+		<div class="navbar">
+			<a class="navbar-brand" href="index.html">
+				<img src="assets/img/logo/32x32.png" alt="Logo" />
+			</a>
+			<h1 style="font-family: 'Trebuchet MS';">MoonBot Premium</h1>
+		</div>
+	</header>
+	<section id="home" class="hero-section-price-contact-container">
+		<div class="price-contact-container">
+			<div class="price-contact-form-container">
+				<div class="left-container">
+					<div class="left-inner-container">
+
+						<div class="price-table-wrapper">
+
+							<div class="pricing-table featured-table">
+								<h2 class="pricing-table__header">- Lifetime Premium -</h2>
+								<h3 class="pricing-table-previous__price">$500</h3>
+								<h3 class="pricing-table__price">$200</h3>
+								<ul class="pricing-table__list">
+									<li>Fastest RPC node provided</li>
+									<li>50% discount</li>
+									<li>Feature request voting</li>
+									<li>Admin support</li>
+									<li>Continuous updates for free</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="right-container">
+					<div class="right-inner-container">
+						<form>
+							<label for="email-id-input">Email on which you'll receive the premium version:</label>
+							<input id="email-id-input" type="email" placeholder="Email *" />
+
+							<button id="payment-proceed-btn" class="button-form">Proceed to payment</button>
+						</form>
+					</div>
+					<div class="footer-container">
+						<div class="support_url">
+							Any questions? <span><a href="https://discord.gg/wcY3AHeYpC" target="_blank"><i class="lni lni-discord"></i></a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- ======== JS here ======== -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script>
+        var currentPrice = 200;
+        document.getElementById('payment-proceed-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            var button = document.getElementById('payment-proceed-btn');
+            button.disabled = true;
+
+            var emailId = document.getElementById('email-id-input').value;
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(emailId)) {
+                alert("Please enter a valid email address for the email.");
+                button.disabled = false;
+                return;
+            }
+
+            // Prepare the request body
+            var requestBody = {
+                "price_amount": currentPrice,
+                "price_currency": "usd",
+                "order_id": emailId,
+                "order_description": "MoonBot Premium",
+                "ipn_callback_url": "https://api.moonbotapp.com/notify",
+                "success_url": "https://api.moonbotapp.com/notify",
+                "cancel_url": "https://api.moonbotapp.com/notify"
+            };
+
+            // Send POST request
+            fetch('https://api.nowpayments.io/v1/invoice', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-api-key': 'PAEBAXB-KM04G73-HGDM12J-FF5BWTP'
+                },
+                body: JSON.stringify(requestBody)
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error('Failed to proceed');
+                    }
+                })
+                .then(data => {
+                    console.log(data);
+                    window.location.href = data.invoice_url;
+					var newTab = window.open(data.invoice_url, '_blank'); // Open the invoice URL in a new tab
+					window.close(); // Close the current tab
+                })
+                .catch(error => {
+                    console.error(error);
+                })
+                .finally(() => {
+                    button.disabled = false;
+                })
+        });
+
+	</script>
+</body>
+</html>

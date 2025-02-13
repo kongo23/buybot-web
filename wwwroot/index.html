@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>MoonBot - Multiplatform snipe bot</title>
+    <meta property="og:title" content="MoonBot - Multiplatform snipe bot">
+    <meta property="og:description" content="Moonbot helps you snipe tokens as soon as they become available, getting you the best price possible!">
+    <meta property="og:image" content="https://moonbotapp.com/assets/img/hero/app-main-og.png">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://moonbotapp.com/" />
+    <meta name="description" content="Moonbot helps you buy tokens as soon as they become available, getting you the best price possible!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/32x32.png" />
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ======== CSS here ======== -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/lineicons.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">
+          You are using an <strong>outdated</strong> browser. Please
+          <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+          your experience and security.
+        </p>
+      <![endif]-->
+    <!-- ======== preloader start ======== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader end -->
+    <!-- ======== header start ======== -->
+    <header class="header">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="index.html">
+                                <img src="assets/img/logo/32x32.png" alt="Logo" />
+                            </a>
+                            <h1 style="font-family: 'Trebuchet MS';">MoonBot</h1>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a class="page-scroll active" href="#home">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#features">Features</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#about">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#contact">Contact</a>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                            <!-- navbar collapse -->
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- ======== header end ======== -->
+    <!-- ======== hero-section start ======== -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center position-relative">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="wow fadeInUp" data-wow-delay=".4s">
+                            Buy tokens on launchpads at the lowest price!
+                        </h1>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">
+                            Moonbot helps you buy tokens as soon as they become available, getting you the best price possible! <br />Set up the bot, sit back, relax, and let it handle everything&#127864;
+                        </p>
+                        <div>
+                            <button id="download-btn" class="main-btn border-btn btn-hover wow fadeInUp">
+                                <div id="button__loader" class="loader button__loader button__loader--hide"></div>
+                                <span>Download free version</span>
+                            </button>
+                            <a href="/purchase.html" target="_blank"
+                               class="main-btn border-btn btn-hover wow fadeInUp purchase-button" data-wow-delay=".6s">Purchase Now <br/><span id="current_discount">with 60% discount</span></a>
+                            <br />
+                            <div id="recaptcha-container" style="display: none;"></div>
+                        </div>
+
+                        <a href="#features" class="scroll-bottom">
+                            <i class="lni lni-arrow-down"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-img wow fadeInUp" id="gif-placeholder" data-wow-delay=".5s">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ======== hero-section end ======== -->
+    <!-- ======== feature-section start ======== -->
+    <section id="features" class="feature-section pt-120">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-md-8 col-sm-10">
+                    <div class="single-feature">
+                        <div class="icon">
+                            <i class="lni lni-cloud-check"></i>
+                        </div>
+                        <div class="content">
+                            <h3>Lightning Speed</h3>
+                            <p>
+                                Stay ahead of other bots by using our provided lightning-fast RPC nodes to seamlessly execute your purchases.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-8 col-sm-10">
+                    <div class="single-feature">
+                        <div class="icon">
+                            <i class="lni lni-gift"></i>
+                        </div>
+                        <div class="content">
+                            <h3>Free tier</h3>
+                            <p>
+                                You can use the tool for free and level up to premium version — at lowest price on a market!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-8 col-sm-10">
+                    <div class="single-feature">
+                        <div class="icon">
+                            <i class="lni lni-coffee-cup"></i>
+                        </div>
+                        <div class="content">
+                            <h3>Easy to Use</h3>
+                            <p>
+                                Simple and intuitive design that ensures a smooth experience. Anti-AntiBot strategy included.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-8 col-sm-10">
+                    <div class="single-feature">
+                        <div class="icon">
+                            <i class="lni lni-stats-up"></i>
+                        </div>
+                        <div class="content">
+                            <h3>Continuous work</h3>
+                            <p>
+                                New chains support is already in work, offering even more possibilities.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ======== feature-section end ======== -->
+    <!-- ======== about-section start ======== -->
+    <section id="about" class="about-section pt-150">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="about-img">
+                        <img class="app-img" src="assets/img/hero/app-img-example-3.png" loading="lazy" alt="app-example" class="w-100" />
+                        <img src="assets/img/about/about-left-shape.svg" loading="lazy" alt="background-img" class="shape shape-1" />
+                        <img src="assets/img/about/left-dots.svg" alt="background-img" loading="lazy" class="shape shape-2" />
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="about-content">
+                        <div class="section-title mb-30">
+                            <h2 class="mb-25 wow fadeInUp" data-wow-delay=".2s">
+                                Easy to Use with Awesome Features
+                            </h2>
+                            <p class="wow fadeInUp" data-wow-delay=".4s">
+                                <ul>
+                                    <li>Set Bot to buy maximum tokens for lowest price</li>
+                                    <li>Buy exact number of tokens with included safety limit to get around of all anti-bot protections</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ======== about-section end ======== -->
+    <!-- ======== about2-section start ======== -->
+    <section id="about" class="about-section pt-150">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="about-content">
+                        <div class="section-title mb-30">
+                            <h2 class="mb-25 wow fadeInUp" data-wow-delay=".2s">
+                                Early Access!
+                            </h2>
+                        </div>
+                        <ul>
+                            <li>Grab this tool now at the lowest price, and get free updates with support for new chains and other features.</li>
+                            <li>By getting premium version of the tool, you also gain the ability to vote for feature requests</li>
+                            <li>Discount will decrease with each feature update!</li>
+                        </ul>
+                        <a href="#home" class="main-btn btn-hover border-btn wow fadeInUp" data-wow-delay=".6s">
+                            Try it yourself
+                        </a>
+                        <a href="https://discord.gg/wcY3AHeYpC" target="_blank" class="main-btn btn-hover border-btn wow fadeInUp contact-btn" data-wow-delay=".6s">
+                            Contact us in Discord
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 order-first order-lg-last">
+                    <div class="about-img-2">
+                        <img class="app-img" src="assets/img/hero/app-img-example-1.png" loading="lazy" alt="app-example" class="w-100" />
+                        <img src="assets/img/about/about-right-shape.svg" alt="background-img" loading="lazy" class="shape shape-1" />
+                        <img src="assets/img/about/right-dots.svg" alt="background-img" loading="lazy" class="shape shape-2" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ======== feature-section end ======== -->
+    <!-- ======== footer start ======== -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="widget-wrapper">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <div class="footer-widget">
+                            <p class="desc mb-30 text-white socials">
+                                Subscribe to our Discord server for FAQ
+                            </p>
+                            <ul class="socials">
+                                <li>
+                                    <a href="https://discord.gg/wcY3AHeYpC" target="_blank">
+                                        <i class="lni lni-discord"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ======== footer end ======== -->
+    <!-- ======== scroll-top ======== -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+    <!-- ======== JS here ======== -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            // When the page is fully loaded, replace the placeholder with the GIF
+            var gifPlaceholder = document.getElementById('gif-placeholder');
+            var gif = document.createElement('img');
+            gif.src = 'assets/img/hero/app-main.gif';
+            gif.classList.add('hidden'); // Hide the GIF initially
+            gif.className = "app-img";
+            gif.onload = function () {
+                gif.classList.remove('hidden'); // Show the GIF after it's loaded
+            };
+            gifPlaceholder.appendChild(gif);
+        });
+    </script>
+</body>
+
+</html>
